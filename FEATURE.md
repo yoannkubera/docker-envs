@@ -32,6 +32,9 @@ Bug fixes:
 
 *
 
-Known bugs:
+Known issues:
 
-*
+* Apache2 client with NodeJS web API template:
+
+    * The configuration does not take into account REST requests or user protected
+      API calls

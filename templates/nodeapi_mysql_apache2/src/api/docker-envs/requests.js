@@ -58,7 +58,7 @@ function _set_headers( res ) {
  * @param app The instantiated express server.
  * @param route The route.
  */
-function _cors( app, route ) {
+function _f_cors( app, route ) {
 	// TODO: Check if better implementation by following https://expressjs.com/en/resources/middleware/cors.html
 	app.head( route, _cors( ), (req, res) => {
 		res.sendStatus( 204 );
@@ -73,5 +73,5 @@ function _cors( app, route ) {
 
 module.exports = {
 	headerSetting: _set_headers,
-	cors: null
+	cors: _f_cors
 };
