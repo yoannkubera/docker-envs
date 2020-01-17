@@ -13,11 +13,20 @@ minimal configurations are required.
 
 Changes:
 
-*
+* Readme.md:
+
+    * Updated the Readme.md file to include a mention to this new template
+    * Included the credits into the Readme.md file
 
 Additions:
 
-*
+* Apache2 client with NodeJS web API template:
+
+    * Added the untested docker ecosystem with its configuration files
+    * Added an API configuration loading library and its JSON configuration template
+    * Added a javascript client configuration library and its configuration template
+    * Added a basic database initialization source tree
+    * Added a basic usage example with a client displaying a version provided by the API
 
 Bug fixes:
 

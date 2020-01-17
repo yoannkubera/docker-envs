@@ -1,0 +1,5 @@
+# Prevent docker from overriding the container's "node_module/" directory
+# containing the dependencies it downloaded with a possible local "node_module/"
+# directory, if the developper used the "nodejs" command in the directory.
+node_modules
+npm-debug.log
