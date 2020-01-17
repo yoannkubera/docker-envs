@@ -29,8 +29,6 @@ services:
       MYSQL_DATABASE: ${API_MYSQL_DATABASE}
       API_HOST: 0.0.0.0
       API_PORT: 8080
-      API_DESC: ${API_DESC}
-      API_VERSION: ${API_VERSION}
     volumes:
       - ../src/api:/srv/api
       - /srv/api/node_modules
@@ -39,10 +37,12 @@ services:
     build:
       context: ..
       dockerfile: docker-dev-env/apache/Dockerfile
+    depends_on:
+      - app_api
     ports:
       - ${GUI_PORT}:80
     environment:
       API_HOST: "app_api"
-      API_PORT: ${API_PORT}
+      API_PORT: ${API_EXPOSED_PORT}
     volumes:
       - ../src/client:/var/www/html

@@ -18,8 +18,6 @@ sed -i "s/@@DB_PWD@@/${MYSQL_PASSWORD}/g" /tmp/config.docker.json
 sed -i "s/@@DB_NAME@@/${MYSQL_DATABASE}/g" /tmp/config.docker.json
 sed -i "s/@@API_HOST@@/${API_HOST}/g" /tmp/config.docker.json
 sed -i "s/@@API_PORT@@/${API_PORT}/g" /tmp/config.docker.json
-sed -i "s/@@API_DESC@@/${API_DESC}/g" /tmp/config.docker.json
-sed -i "s/@@API_VERSION@@/${API_VERSION}/g" /tmp/config.docker.json
 cat /tmp/config.docker.json
 
 # Download the nodejs missing dependencies.
