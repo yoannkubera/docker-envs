@@ -13,7 +13,6 @@ services:
     volumes:
       - ./mysql/init/:/docker-entrypoint-initdb.d/
       - ../src/sql/base/:/srv/sql/01/
-      - ../src/sql/sample-data/:/srv/sql/02/
 
   app_api:
     build:
@@ -46,5 +45,7 @@ services:
     environment:
       API_HOST: "localhost"
       API_PORT: ${API_EXPOSED_PORT}
+      API_INNER_HOST: app_api
+      API_INNER_PORT: 8080
     volumes:
       - ../src/client:/var/www/html

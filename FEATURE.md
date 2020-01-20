@@ -34,3 +34,6 @@ Known issues:
 
     * The configuration does not take into account REST requests or user protected
       API calls
+    * The Apache2 server can start before the API is ready. This issue causes
+      limited problems, since the user will probably access the apache2 server
+      after the API initialized.
