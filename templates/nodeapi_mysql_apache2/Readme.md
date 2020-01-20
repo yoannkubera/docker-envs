@@ -57,6 +57,7 @@ To run a preconfigured docker ecosystem running the application:
     ```bash
 		docker-compose up
 		```
+
 * Once the various downloads and service setup ends, then open a web browser at
   the following URI (the port might have to be changed):
 
@@ -90,7 +91,8 @@ You can now:
 
 1. Complete the documentation with missing information about your project.
    If possible, be kind enough to credit the use of this template by putting a
-	 link to its [github repository](https://github.com/yoannkubera/docker-envs) :)
+	 link to its [github repository](https://github.com/yoannkubera/docker-envs)
+   :smile:
 
 ## Credits
 
@@ -105,26 +107,22 @@ below. The author does not guarantee that it would work in other types of enviro
 
 The docker development ecosystem relies on:
 
-* [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/) (version 19.03.5)
-* Docker Compose (bundled with docker CE)
-* The docker images:
+| Name                                                                 | Type         | Version      | License                       |
+|:--------------------------------------------------------------------:|:------------:|:------------:|:-----------------------------:|
+| [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/) | Software     | 19.03.5      | |
+| [MySQL](https://hub.docker.com/_/mysql)                              | Docker image | 5.7.29       | GNU General Public License v2 |
+| [PHP - Apache2](https://hub.docker.com/_/php)                        | Docker image | 7.4.1-apache | PHP License v3.01             |
+| [Node](https://hub.docker.com/_/node/)                               | Docker image | 13.6.0       | MIT LICENSE                   |
 
-		* [MySQL](https://hub.docker.com/_/mysql) (version 5.7.29), GNU General Public License v2
-		* [PHP - Apache2](https://hub.docker.com/_/php) (version 7.4.1-apache), PHP License v3.01
-    * [Node](https://hub.docker.com/_/node/) (version 13.6.0), MIT LICENSE
-
-The client interface relies on:
-
-* A javascript library developped in the context of this template to read
-  API configuration information, MIT LICENSE;
+The client interface relies on a javascript library developped in the context of
+this template to read API configuration information (MIT LICENSE).
 
 The API has been developped and tested on the following technologies and versions:
 
-* [Node.js](https://nodejs.org/en/) (version 13.6.0), MIT LICENSE
-
-* Node.js modules:
-
-    * [Express.js](http://expressjs.com/) (4.17.1), MIT LICENSE
-		* [Body-Parser](https://github.com/expressjs/body-parser#readme) (1.19.0), MIT LICENSE
-		* [Cors](https://github.com/expressjs/cors#readme) (2.8.5), MIT LICENSE
-		* [FS](https://github.com/npm/security-holder#readme) (0.0.1-security), ISC LICENSE
+| Name                                                           | Type          | Version        | License     |
+|:--------------------------------------------------------------:|:-------------:|:--------------:|:-----------:|
+| [Node.js](https://nodejs.org/en/)                              | Software      | 13.6.0         | MIT LICENSE |
+| [Express.js](http://expressjs.com/)                            | NodeJS module | 4.17.1         | MIT LICENSE |
+| [Body-Parser](https://github.com/expressjs/body-parser#readme) | NodeJS module | 1.19.0         | MIT LICENSE |
+| [Cors](https://github.com/expressjs/cors#readme)               | NodeJS module | 2.8.5          | MIT LICENSE |
+| [FS](https://github.com/npm/security-holder#readme)            | NodeJS module | 0.0.1-security | ISC LICENSE |

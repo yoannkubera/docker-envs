@@ -26,7 +26,7 @@ to the various developed features:
 
 * An apache2 server providing the client interface.
 
-## Docker environment documentation
+## Docker environment documentation
 
 * [How to install and use the docker enviroment](dev-env.md)
 * [Quick access to the configuration guide of the environment](configuration.md)

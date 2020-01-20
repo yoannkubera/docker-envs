@@ -100,7 +100,7 @@ Then, type one of the following commands the release the resources that were use
 
     ```
 		docker-compose down
-		```
+    ```
 
 * If you want to rebuild everything, including the system update step and npm
   depencencies download steps (takes longer):
@@ -109,7 +109,7 @@ Then, type one of the following commands the release the resources that were use
 		docker-compose down -v --rmi local
 		docker image prune -f
 		docker volume prune -f
-		```
+    ```
 
-	This option should be used if you witness some incoherent behavior when starting
-	up the docker environment.
+    This option should be used if you witness some incoherent behavior when starting
+    up the docker environment.
