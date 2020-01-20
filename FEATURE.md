@@ -1,32 +1,25 @@
 # Description of the developed feature
 
-__Feature name:__ Addition of the template for Apache2 client with NodeJS web API
+__Feature name:__ Fixture of the template for Apache2 client with NodeJS web API
 
 __Feature description:__
 
-Adding a template supporting the development of Apache2 client interface accessing
-the database through a web API written with nodeJS. It includes a docker environment
-supporting the execution of the application in preconfigured docker ecosystem where
-minimal configurations are required.
+Fixture of bugs and implementation en missing featuresof the current implementation
+of the template for Express.js / MySQL / Apache2 applications:
+
+* The API can start before the database is ready
+* The Apache2 server can start before the API is ready
+* The database does not initialize properly
 
 ## Feature changes in this branch
 
 Changes:
 
-* Readme.md:
-
-    * Updated the Readme.md file to include a mention to this new template
-    * Included the credits into the Readme.md file
+*
 
 Additions:
 
-* Apache2 client with NodeJS web API template:
-
-    * Added the untested docker ecosystem with its configuration files
-    * Added an API configuration loading library and its JSON configuration template
-    * Added a javascript client configuration library and its configuration template
-    * Added a basic database initialization source tree
-    * Added a basic usage example with a client displaying a version provided by the API
+*
 
 Bug fixes:
 
