@@ -47,5 +47,5 @@ line has to be added using the same indentation. It assumes that the SQL initial
 scripts are located in the `src/sql/sample-data/` directory of the project:
 
 ```
-- ../src/sql/sample-data/:/docker-entrypoint-initdb.d/02/:
+- ../src/sql/sample-data/:/docker-entrypoint-initdb.d/02/
 ```
