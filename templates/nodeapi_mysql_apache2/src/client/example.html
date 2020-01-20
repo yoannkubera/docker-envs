@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>My beautiful app</title>
+		<meta name="description" content="A usage example of the web API.">
+
+		<link rel="stylesheet" href="css/styles.css?v=1.0">
+	</head>
+
+	<body onload="when_page_loads()">
+
+		<h1>My beautiful app</h1>
+		<p>
+			<strong>About the web API:</strong> <span id="api_infos"></span>
+		</p>
+
+		<script src="vendor/jquery-3.4.1/js/jquery-3.4.1.min.js"></script>
+		<script src="config.js"></script>
+		<script src="vendor/docker-envs/js/config-libs.js"></script>
+
+		<script type="text/javascript">
+			/**
+			 * Tell what to do if the request succeeds
+			 * @param result The result of the call to the API.
+			 */
+			function on_success( result ) {
+				// Update the content of #api_infos
+				$( "#api_infos" ).html( result );
+			}
+			/**
+			 * Tell what to do if the request fails
+			 * @param jqXHR The handler of the ajax request.
+			 * @param textStatus The text of the error.
+			 * @param errorThrown The description of the error.
+			 */
+			function on_error( jqXHR, textStatus, errorThrown ) {
+				// Build the displayed error text.
+				var errorHtml = "Failed to get the version information! ";
+				if( errorThrown ) {
+					errorHtml += textStatus + " (" + errorThrown + ")";
+				}
+				// Update the content of #api_infos
+				$( "#api_infos" ).html( errorHtml );
+			}
+			/**
+			 * Function called when the page loads: it uses the web API to find out
+			 * its current version information.
+			 */
+			function when_page_loads( ) {
+				// Get the base URI of the web API, using functions from "config-libs"
+				var base_uri = getWebApiBaseURI( );
+				// Send the ajax request.
+				$.ajax( {
+					type: "GET",
+					url: 	base_uri + "/version",
+					dataType: "jsonp",
+					success: on_success,
+					error: on_error
+				} );
+			}
+		</script>
+
+	</body>
+</html>

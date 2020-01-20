@@ -1,0 +1,15 @@
+{
+	"database": {
+		"host"     : "@@DB_HOST@@",
+		"port"     : "@@DB_PORT@@",
+		"user"     : "@@DB_USER@@",
+		"password" : "@@DB_PWD@@",
+		"name" 		 : "@@DB_NAME@@"
+	},
+	"api": {
+		"host": "@@API_HOST@@",
+		"port": "@@API_PORT@@",
+		"version": "@@API_VERSION@@",
+		"desc": "@@API_DESC@@"
+	}
+}
