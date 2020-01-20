@@ -13,10 +13,10 @@
 
 		<h1>My beautiful app</h1>
 		<p>
-			About the web API:
+			<strong>About the web API:</strong> <span id="api_infos"></span>
 		</p>
-		<div id="api_infos"></div>
 
+		<script src="vendor/jquery-3.4.1/js/jquery-3.4.1.min.js"></script>
 		<script src="config.js"></script>
 		<script src="vendor/docker-envs/js/config-libs.js"></script>
 
@@ -27,17 +27,22 @@
 			 */
 			function on_success( result ) {
 				// Update the content of #api_infos
-				var theDiv = document.getElementById( "api_infos" );
-				theDiv.innerHTML = '<b>' + result + '</b>';
+				$( "#api_infos" ).html( result );
 			}
 			/**
 			 * Tell what to do if the request fails
-			 * @param error The error sent by the API.
+			 * @param jqXHR The handler of the ajax request.
+			 * @param textStatus The text of the error.
+			 * @param errorThrown The description of the error.
 			 */
-			function on_error( error ) {
+			function on_error( jqXHR, textStatus, errorThrown ) {
+				// Build the displayed error text.
+				var errorHtml = "Failed to get the version information! ";
+				if( errorThrown ) {
+					errorHtml += textStatus + " (" + errorThrown + ")";
+				}
 				// Update the content of #api_infos
-				var theDiv = document.getElementById( "api_infos" );
-				theDiv.innerHTML = "Failed to get the version information: " + error;
+				$( "#api_infos" ).html( errorHtml );
 			}
 			/**
 			 * Function called when the page loads: it uses the web API to find out
@@ -47,14 +52,13 @@
 				// Get the base URI of the web API, using functions from "config-libs"
 				var base_uri = getWebApiBaseURI( );
 				// Send the ajax request.
-				$.ajax({
-					url: base_url + "/version",
-					type: 'GET',
-					crossDomain: true,
-					dataType: 'json',
+				$.ajax( {
+					type: "GET",
+					url: 	base_uri + "/version",
+					dataType: "jsonp",
 					success: on_success,
-					error: ajax_get_session_error
-				});
+					error: on_error
+				} );
 			}
 		</script>
 

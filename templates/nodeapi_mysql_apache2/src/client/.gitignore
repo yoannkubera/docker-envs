@@ -1,2 +1,2 @@
 # Ingore the local configuration file, which is dependent on the system.
-config.json
+config.js

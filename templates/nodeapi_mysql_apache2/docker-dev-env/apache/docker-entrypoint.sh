@@ -9,7 +9,7 @@ set -e
 
 # Create or update the docker configuration file.
 echo "Creating / Updating the configuration JSON for accessing the database, using the configuration:"
-cp vendor/docker-envs/config.template.js config.js
+cp vendor/docker-envs/js/config.template.js config.js
 sed -i "s/@@API_HTTPS@@/false/g" config.js
 sed -i "s/@@API_HOST@@/${API_HOST}/g" config.js
 sed -i "s/@@API_PORT@@/${API_PORT}/g" config.js

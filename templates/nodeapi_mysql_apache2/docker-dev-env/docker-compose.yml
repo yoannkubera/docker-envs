@@ -42,7 +42,7 @@ services:
     ports:
       - ${GUI_PORT}:80
     environment:
-      API_HOST: "app_api"
+      API_HOST: "localhost"
       API_PORT: ${API_EXPOSED_PORT}
     volumes:
       - ../src/client:/var/www/html

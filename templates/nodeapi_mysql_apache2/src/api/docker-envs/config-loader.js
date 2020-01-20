@@ -29,7 +29,7 @@ const _fs = require( 'fs' );
 // The path of the default configuration file.
 var _DEFAULT_CONFIG_PATH = "config.js";
 // The encoding used to read the configuration file.
-var _READ_FORMAT = "ut8";
+var _READ_FORMAT = "utf8";
 
 /* ----------------------------------------------------------------------------
   --
@@ -68,9 +68,9 @@ function _readConfigFile( path ) {
 		throw new Error( "The configuration file '" + path + "' does not exist!" );
 	}
 	// Check that the file is readable.
-	if( ! _fs.accessSync( path, _fs.constants.R_OK ) ) {
+/*	if( ! _fs.accessSync( path, _fs.constants.R_OK ) ) {
 		throw new Error( "The configuration file '" + path + "' is not readable!" );
-	}
+	}*/
 	// Load the content of the file as UTF8 content.
 	var fileContent = _fs.readFileSync( path, _READ_FORMAT );
 	// Parse the content as JSON.

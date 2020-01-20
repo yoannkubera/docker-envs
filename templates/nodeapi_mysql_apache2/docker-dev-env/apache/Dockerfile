@@ -18,3 +18,6 @@ COPY ./docker-dev-env/apache/docker-entrypoint.sh /usr/local/bin/docker-entrypoi
 
 # Define the entrypoint script of the docker image during execution
 ENTRYPOINT ["/bin/bash","/usr/local/bin/docker-entrypoint.sh"]
+
+# Define the command as apache2 foreground.
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]

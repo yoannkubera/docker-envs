@@ -3,10 +3,9 @@
 	"description": "Web API associated with this application",
 	"main": "app.js",
 	"engines": {
-		"node" : ">=13.6.0"
+		"node": ">=13.6.0"
 	},
 	"dependencies": {
-		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"fs": "0.0.1-security"

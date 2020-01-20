@@ -49,7 +49,9 @@ function getWebApiBaseURI( ) {
 		uri += ":" + config.api.port;
 	}
 	/* Add the path */
-	uri += path;
+	if( config.api.path ) {
+		uri += "/" + config.api.path;
+	}
 	/* Finally return the URI */
 	return uri;
 }

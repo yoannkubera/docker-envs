@@ -109,20 +109,26 @@ The docker development ecosystem relies on:
 
 | Name                                                                 | Type         | Version      | License                       |
 |:--------------------------------------------------------------------:|:------------:|:------------:|:-----------------------------:|
-| [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/) | Software     | 19.03.5      | |
+| [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/) | Software     | 19.03.5      | Apache 2.0 license            |
 | [MySQL](https://hub.docker.com/_/mysql)                              | Docker image | 5.7.29       | GNU General Public License v2 |
 | [PHP - Apache2](https://hub.docker.com/_/php)                        | Docker image | 7.4.1-apache | PHP License v3.01             |
-| [Node](https://hub.docker.com/_/node/)                               | Docker image | 13.6.0       | MIT LICENSE                   |
+| [Node](https://hub.docker.com/_/node/)                               | Docker image | 13.6.0       | MIT License                   |
 
 The client interface relies on a javascript library developped in the context of
 this template to read API configuration information (MIT LICENSE).
+
+| Name                                                                        | Type         | Version | License     |
+|:---------------------------------------------------------------------------:|:------------:|:-------:|:-----------:|
+| [JQuery](https://jquery.com/)                                               | JS library   | 3.4.1   | MIT License |
+| Docker-envs (javascript library developped in the context of this template) | JS library   | ---     | MIT License |
+
 
 The API has been developped and tested on the following technologies and versions:
 
 | Name                                                           | Type          | Version        | License     |
 |:--------------------------------------------------------------:|:-------------:|:--------------:|:-----------:|
-| [Node.js](https://nodejs.org/en/)                              | Software      | 13.6.0         | MIT LICENSE |
-| [Express.js](http://expressjs.com/)                            | NodeJS module | 4.17.1         | MIT LICENSE |
-| [Body-Parser](https://github.com/expressjs/body-parser#readme) | NodeJS module | 1.19.0         | MIT LICENSE |
-| [Cors](https://github.com/expressjs/cors#readme)               | NodeJS module | 2.8.5          | MIT LICENSE |
-| [FS](https://github.com/npm/security-holder#readme)            | NodeJS module | 0.0.1-security | ISC LICENSE |
+| [Node.js](https://nodejs.org/en/)                              | Software      | 13.6.0         | MIT License |
+| [Express.js](http://expressjs.com/)                            | NodeJS module | 4.17.1         | MIT License |
+| [Body-Parser](https://github.com/expressjs/body-parser#readme) | NodeJS module | 1.19.0         | MIT License |
+| [Cors](https://github.com/expressjs/cors#readme)               | NodeJS module | 2.8.5          | MIT License |
+| [FS](https://github.com/npm/security-holder#readme)            | NodeJS module | 0.0.1-security | ISC License |

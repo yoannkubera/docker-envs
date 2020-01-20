@@ -22,12 +22,11 @@
  * Vendor dependencies
  */
 const _express = require( 'express' );
-const _bodyParser = require('body-parser');
+const _cors = require( 'cors' );
 /*
  * Local dependencies
  */
 const _LOCAL_cfg_loader = require( './docker-envs/config-loader' );
-const _LOCAL_requests = require( './docker-envs/requests' );
 
 /* ----------------------------------------------------------------------------
  --
@@ -35,7 +34,7 @@ const _LOCAL_requests = require( './docker-envs/requests' );
  --
  ---------------------------------------------------------------------------- */
 
-var config = _cfg_loader.load( process.argv );
+var config = _LOCAL_cfg_loader.load( process.argv );
 
 /* ----------------------------------------------------------------------------
  --
@@ -45,17 +44,16 @@ var config = _cfg_loader.load( process.argv );
 
 // Create the server
 const app = _express( );
-// TODO: Check if better implementation by following https://expressjs.com/en/resources/middleware/cors.html
-// TODO: https://www.frugalprototype.com/developpez-propre-api-node-js-express/
-app.use( function(req, res, next) {
-  _LOCAL_requests.headerSetting(res);
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-} );
-// Configure the response parser.
-app.use( bodyParser.urlencoded({ extended: true }) );
-app.use( bodyParser.json() );
+// Create the used CORS options.
+var corsOptions = {
+  origin: "*", // Accept any source for CORS requests
+  methods: [ 'GET' ], // Allow only GET requests
+  allowedHeaders: [ 'Origin', 'X-Requested-With', 'Content-Type', 'Accept' ], // Allow CORS related headers
+  credentials: true,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+// Enable CORS for any requests
+app.use( _cors( corsOptions ) );
 
 /* ----------------------------------------------------------------------------
  --
@@ -63,18 +61,14 @@ app.use( bodyParser.json() );
  --
  ---------------------------------------------------------------------------- */
 
-var request_format;
-
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // GET		/version
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Gets information about the current version of the API.
-request_format = "/version";
-app.get( request_format, function( req, res ){
-    _LOCAL_requests.headerSetting( res );
-		return res.json( "Web API " + config.api.desc + " (Version " + config.api.version + ")" );
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+app.get( "/version", function( req, res ){
+		return res.jsonp( "Web API " + config.api.desc + " (Version " + config.api.version + ")" );
 });
-_LOCAL_requests.cors( app, request_format );
 
 /* ----------------------------------------------------------------------------
  --
