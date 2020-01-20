@@ -45,6 +45,8 @@ The minimal configuration of this template consists in:
     git add --force docker-dev-env/.env src/api/config.template.json
     ```
 
+<center>__For more information, please read the [contribution guide](CONTRIBUTING.md)__</center>
+
 ### Test the docker ecosystem
 
 To run a preconfigured docker ecosystem running the application:
@@ -114,8 +116,7 @@ The docker development ecosystem relies on:
 | [PHP - Apache2](https://hub.docker.com/_/php)                        | Docker image | 7.4.1-apache | PHP License v3.01             |
 | [Node](https://hub.docker.com/_/node/)                               | Docker image | 13.6.0       | MIT License                   |
 
-The client interface relies on a javascript library developped in the context of
-this template to read API configuration information (MIT LICENSE).
+The client interface relies on:
 
 | Name                                                                        | Type         | Version | License     |
 |:---------------------------------------------------------------------------:|:------------:|:-------:|:-----------:|

@@ -37,11 +37,12 @@ Note that:
   the base initialization scripts from the directory `src/sql/base/`, then the
 	`docker-compose.yml` file has to be modified.
 
-[configuration.md](Read more about the configuration)
+[Read more about the configuration](configuration.md)
 
 __Warning:__ Changes in those files are not automatically included in the git
-repository. If a change __has__ to be taken into account, then the `git add`
-command has to be called with the `--force` option.
+repository. If a change __has__ to be taken into account into the git repository,
+then the `git add` command has to be called with the `--force` option onto these
+files.
 
 ## Starting the environment
 
@@ -69,7 +70,7 @@ It means that the changes in the `src/` directory will be automatically sent
 to the services, even when they are running.
 
 You can then access to the API / Client interfaces using a web browser. Note that
-the ports might not be the ones described here. Please chech the content of the
+the ports might not be the ones described here. Please check the content of the
 `docker-dev-env/.env` file, and especilly the value associated with the _"API_PORT"_
 key (port on which the API is accessible) and with the _"GUI_PORT"_ key (port on
 which the client interfaces are accessible):
@@ -81,7 +82,8 @@ which the client interfaces are accessible):
 * The URI _"http://localhost:61000"_ to access the API (base URI of the API).
 
 From now on, you can change the code of the client interface. Its changes will
-be dynamically taken into account into the corresponding apache2 server.
+be dynamically taken into account into the corresponding apache2 server. Changes
+in the API can only be taken into account by restarting the docker ecosystem.
 
 ## Stopping the environment
 
@@ -95,8 +97,11 @@ is done on the console where the ecosystem was started:
 
 Then, type one of the following commands the release the resources that were used:
 
-* If you do not want to rebuild the docker images during the next execution
-  (preferred):
+* None if you wish to restart the docker ecosystem to take into account changes
+  inside the API;
+
+* If you wish to take into account changes in the ports or database credentials
+  made in the `.env` file, or the addition of database initialization scripts:
 
     ```
 		docker-compose down
