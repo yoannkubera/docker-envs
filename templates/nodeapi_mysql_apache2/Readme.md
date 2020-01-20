@@ -24,7 +24,7 @@ The minimal configuration of this template consists in:
 			should represent the same number than the one provided in the `package.json`
 			file);
 
-		* `@@API_DESC@@`: The name of the API, or a short description;
+    * `@@API_DESC@@`: The name of the API, or a short description;
 
 * Editing the `package.json` file from the same directory, and providing appropriate
   values to the _"name"_ and _"description"_ fields;
@@ -129,6 +129,5 @@ The API has been developped and tested on the following technologies and version
 |:--------------------------------------------------------------:|:-------------:|:--------------:|:-----------:|
 | [Node.js](https://nodejs.org/en/)                              | Software      | 13.6.0         | MIT License |
 | [Express.js](http://expressjs.com/)                            | NodeJS module | 4.17.1         | MIT License |
-| [Body-Parser](https://github.com/expressjs/body-parser#readme) | NodeJS module | 1.19.0         | MIT License |
 | [Cors](https://github.com/expressjs/cors#readme)               | NodeJS module | 2.8.5          | MIT License |
 | [FS](https://github.com/npm/security-holder#readme)            | NodeJS module | 0.0.1-security | ISC License |
