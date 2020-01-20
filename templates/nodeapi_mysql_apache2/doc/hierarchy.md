@@ -33,7 +33,7 @@ The project relies on the following directories:
   interface. It includes the noticeable files and directories:
 
   * `.gitignore`, a file used by git to ignore generated files;
-  * `config.template.json`, a configuration template of the client. It illustrates
+  * `config.template.js`, a configuration template of the client. It illustrates
     the structure of the configuration file, and is also used by the docker
     development ecosystem to generate the configuration of the docker container
     hosting the client interface. It tells how to reach the web API;
