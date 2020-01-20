@@ -11,7 +11,9 @@ services:
       MYSQL_DATABASE: ${API_MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ../src/sql/base/:/docker-entrypoint-initdb.d/01/
+      - ./mysql/init/:/docker-entrypoint-initdb.d/
+      - ../src/sql/base/:/srv/sql/01/
+      - ../src/sql/sample-data/:/srv/sql/02/
 
   app_api:
     build:

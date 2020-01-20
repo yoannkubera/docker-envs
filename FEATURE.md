@@ -23,7 +23,9 @@ Additions:
 
 Bug fixes:
 
-*
+* Apache2 client with NodeJS web API template:
+
+    * The MySQL container was unable to read database initialization scripts
 
 Known issues:
 
