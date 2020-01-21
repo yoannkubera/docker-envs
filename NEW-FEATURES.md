@@ -25,4 +25,11 @@ Bug fixes:
 
 Known issues:
 
-* RESTful exchanges between the client and the API are not handled
+* Apache2 client with NodeJS web API template:
+
+    * The configuration does not take into account REST requests or user protected
+      API calls
+
+    * The Apache2 server can start before the API is ready. This issue causes
+      limited problems, since the user will probably access the apache2 server
+      after the API initialized.
